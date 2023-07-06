@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Amazon Connect Integration</title>
+  <script src="https://connect-customerstreams.assets-y.com/connect-streams.min.js"></script>
+</head>
+<body>
+  <div id="containerDiv"></div>
+
+  <script>
+    // Initialize the Connect Streams library
+    connect.core.initCCP({ ccpUrl: 'https://aws-saml-connect-testing.awsapps.com/connect/ccp-v2' });
+
+    // Render the Connect control panel
+    connect.core.initCCP({ containerDiv: document.getElementById('containerDiv') });
+
+    // Handle incoming calls
+    connect.contact(function (contact) {
+      // Handle incoming call
+      console.log('Incoming call:', contact);
+    });
+  </script>
+</body>
+</html>
